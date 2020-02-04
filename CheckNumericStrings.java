@@ -32,8 +32,7 @@ public class CheckNumericStrings {
     System.out.println(isNumeric("+10"));
   }
 
-  // for all kinds of values like hexa decimal and all -- use NumberUtils.isCreatable instead of the
-  // custom method.
+  // use NumberUtils.isCreatable instead of the custom method when we want to check hexa
   private static boolean isNumeric(String numericStr) {
     System.out.print("" + numericStr + " is a Numeric String? ");
     if (numericStr.isEmpty()) {
