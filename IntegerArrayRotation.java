@@ -30,11 +30,14 @@ public class IntegerArrayRotation {
   }
   
   private static int[] rotate(int[] numbers, int noOfRotation) {
+    // remove elements from 0 to noOfRotation and create a list
     List<Integer> numberList =
         IntStream.of(numbers).boxed().filter(i -> i > noOfRotation).collect(Collectors.toList());
+    // add them to the list at the backside.
     for (int index = 0; index < noOfRotation; index++) {
       numberList.add(numbers[index]);
     }
+    // create the array back from the list
     return numberList.stream().mapToInt(Integer::intValue).toArray();
   }
 }
